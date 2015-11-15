@@ -24,21 +24,21 @@ My essay will be on convexity-based collision detection algorithms for a 2D game
 \begin{description}
 \item[Title:] An Improved Algorithm of Collision Detection in 2D Grapple Games
 \item[Citation:] \cite{guo}
-\item[Abstract:] ``The goal of collision detection is to automatically report interference between two or more geometric objects in static and dynamic environments. We introduce a new approach to the problem of collision detection in 2D Grapple Games. The objects for collision detection are bounded by the axis-aligned rectangle and circle for a tightly fitting the objects' shapes. To detect the collision exactly, an improved algorithm is presented. We set coordinate values of rectangular center and four vertexes and use the distance from a Point to a line to see whether the object's vertexes are enclosed in the other object. if it is true, a collision occurs. Collision detection is part of the handling collision and its result is a Boolean judgment about the collision of two or more objects colliding.''
+\item[Abstract:] ``The goal of collision detection is to automatically report interference between two or more geometric objects in static and dynamic environments. We introduce a new approach to the problem of collision detection in 2D Grapple Games. The objects for collision detection are bounded by the axis-aligned rectangle and circle for a tightly fitting the objects' shapes. To detect the collision exactly, an improved algorithm is presented. We set coordinate values of rectangular center and four vertexes and use the distance from a Point to a line to see whether the object's vertexes are enclosed in the other object. if it is true, a collision occurs. Collision detection is part of the handling collision and its result is a Boolean judgement about the collision of two or more objects colliding.''
 \item[Web link:] \url{http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6773024}
 \item[Full text link:] Couldn't find one.
-\item[Comments:] I found this article on IEEE Xplore. The title says the algorithm presented in the article is an improved one suggesting it must have some figures to prove that it's better than a pre-existing one. 
+\item[Comments:] I found this article on IEEE Xplore. The abstract says the algorithm presented in the article is an improved one suggesting it must have some figures to prove that it's better than a pre-existing one. 
 \end{description}
 
+\
 \section*{Paper 2}
 \begin{description}
-	\item[Title:] 
-	The Design of Collision Detection Algorithm in 2D Grapple Games
+	\item[Title:] The Design of Collision Detection Algorithm in 2D Grapple Games
 	\item[Citation:] \cite{Tan}
 	\item[Abstract:] ''It is necessary and important to make the collision detection among the objects or between the object and the scene. If we don't detect collisions, objects will intersect each other or object will intersect the scene. In this paper, we present three algorithms in 2D environment. The objects for collision detection are bounded by the axis-aligned rectangles or circles. The known information such as world coordinate system, collision object coordinate system and collision detection area coordinate system etc. are stored in the data files in advance. The data control systems load those information into the collision detection module to handle the collision among the roles and bullets, We set coordinate values of rectangular center and four vertexes and use the distance from a point to a line to see whether the object's vertexes are enclosed in the other object, if it is true, there is a collision occurring. Alg1. is suitable for the situation where the roles get translational movements, Alg2. is suitable for the situation where the role collide the wall, while Alg3. is suitable for the situation where the roles get rotating or flipping movements, which provides the transition for photography coordinates in 3D environment. The three proposed algorithms have less consuming time.''
 	\item[Web link:] \url{http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=5363537}
 	\item[Full text link:] Couldn't find one. 
-	\item[Comments:] This article presents three different algorithms so again should have a lot of information, and statistics. 
+	\item[Comments:] I found this article on IEEE Xplore. This article presents three different algorithms so again should have a lot of information, and statistics. 
 \end{description}
 
 \section*{Paper 3}
@@ -48,18 +48,17 @@ My essay will be on convexity-based collision detection algorithms for a 2D game
 \item[Abstract:] ''This paper discusses the construction of a game engine which is based around the principle of discrete event simulation. This work is interesting as it uses a predictive time of collision rather than a frame based approach. The key design decisions made and the tools used during the construction of the predictive game engine (PGE) are described. The objects modelled in the game engine are rigid circles and polyhedra which may have an orbit rotational velocity, a positional velocity and acceleration. Equations calculating the time of next collision between two circles, a line and a circle and two lines are given. If orbit rotation is excluded, the two circles expansion is simple as the output from maxima is only twelve lines, conversely when orbit rotation is included the output exceeds 835 lines. The input formula to maxima used for detecting the time of collisions between moving polyhedra are presented alongside a tool to automatically import the expanded formula into program code.''
 \item[Web link:] \url{http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7004920}
 \item[Full text link:] \url{http://floppsie.comp.glam.ac.uk/Papers/paper21/2d-game-engine-mulley.pdf}
-\item[Comments:] I found this paper on IEEE Xplore, it sounded interesting as it was about predicting the collision but I'm not sure if it will be relevant. 
+\item[Comments:] I found this paper on IEEE Xplore, it sounded interesting as it was about predicting the time of collision, so may have a different approach to the others. 
 \end{description}
 
 \section*{Paper 4}
 \begin{description}
-	\item[Title:] 
-	A fast algorithm to plan a collision-free path in cluttered 2D environments
-	\item[Citation:] \cite{Tang}
-	\item[Abstract:] Planning collision-free paths in 2D environments is not a new problem in the field of robotics. Methods to plan paths which are optimal in the sense of either length or safety tolerance were well reported decades ago. However, most, if not all, of these algorithms require extensive computational resources, i.e. long computing time, large amount of memory or complex data structures to calculate, especially in highly cluttered environments. This paper presented a simple but fast algorithm which provides a close to optimal path between any two points in highly cluttered 2D environments. It can find a path whenever one exists and can indicate when none exists. The cost of pre-processing is relatively light and the data structure is simple. Comparisons have been made against the conventional distance transform and we find that this new algorithm is twenty times faster in average.
-	\item[Web link:] \url{http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=1438018}
-	\item[Full text link:] Give the URL of a downloadable PDF of the paper, if you can find one
-	\item[Comments:] This paper was again on IEEE Xplore, it was about planning to avoid collisions and the abstract claims that it is a fast algorithm. This paper is about the field of robotics so may not be relevant. 
+	\item[Title:]Interactive Mesostructures with Volumetric Collisions	
+	\item[Citation:] \cite{Nykl}
+	\item[Abstract:] ''This paper presents a technique for interactively colliding with and deforming mesostructures at a per-texel level. It is compatible with a broad range of existing mesostructure rendering techniques including both safe and unsafe ray-height field intersection algorithms. This technique is able to replace traditional 3D geometrical deformations (vertex-based) with 2D image space operations (pixel-based) that are parallelized on a GPU without CPU-GPU data shuffling and integrates well with existing physics engines. Additionally, surface and material properties may be specified at a per-texel level enabling a mesostructure to possess varying attributes intrinsic to its surface and collision behavior. Furthermore, this approach may replace traditional decals with image-based operations that naturally accumulate deformations without inserting any new geometry. This technique provides a simple and efficient way to make almost every surface in a virtual world responsive to user actions and events. It requires no preprocessing time and storage requirements of one additional texture or less. The algorithm uses existing inverse displacement map algorithms as well as existing physics engines and can be easily incorporated into new or existing game pipelines.''
+	\item[Web link:] \url{http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6799298}
+	\item[Full text link:] \url{http://nykl.net/wp/wp-content/uploads/2013/07/Nykl-IEEE-TVCG-2014.pdf}
+	\item[Comments:] This paper was again on IEEE Xplore, the abstract says this about replacing a 3D method with a 2D method so may not be relevant. 
 \end{description}
 
 \section*{Paper 5}
