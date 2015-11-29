@@ -1,2 +1,3 @@
-# comp110-architecture-essay
-A template for the COMP110 architecture essay
+# COMP110 Architecture Essay
+
+Draft version currently over word count.
