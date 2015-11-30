@@ -27,37 +27,45 @@
 
 \section{Introduction}
 
-The purpose of collision detection is to check if objects are currently or going to intersect. In the application of video games this is vital for the ensuring that objects interact correctly. Therefore the game can be played as it was intended.  The intention of this essay is to analyse three convexity-based collision detection algorithms for use in a 2D game engine. The first algorithm is the Gilbert- Johnson–Keerth algorithm first proposed in 1988. The second algorithm uses bounding boxes and was proposed by Guo. The third is by Sulaiman et al and uses vectors to calculate whether to objects are intersecting. 
+The purpose of collision detection is to check if objects are currently or going to intersect. In the application of video games this is vital for the ensuring that objects interact correctly so the game can be played as it was intended.  The intention of this essay is to analyse three convexity-based collision detection algorithms for use in a 2D game engine. The first algorithm is the Gilbert- Johnson–Keerth algorithm first proposed in 1988. The second algorithm uses bounding boxes and was proposed by Guo. The third is by Sulaiman et al and uses vectors to calculate whether objects are intersecting. 
 
 \section{The three algorithms}
 \subsection{Algorithm One: ‘Gilbert-Johnson–Keerth’ (GJK) algorithm}
-Gilbert et al propose their collision detection algorithm, the ‘Gilbert- Johnson – Keerth’ (GJK) algorithm in 1988. \cite{GJK} The algorithm is designed to work efficiently for 3D collision detection however it also works for 2D. Therefore it could be implemented in a 2D game engine. The intention of this algorithm is to determine whether objects intersect by calculating the Eucildean distance between a set of convex objects. According to Gilbert the distance between two convex objects is the same as the distance between those object’s Minkowski difference and the origin. If that difference is zero then the objects are intersecting each other and have collided.
+Gilbert et al proposed their collision detection algorithm, the ‘Gilbert- Johnson – Keerth’ (GJK) algorithm in 1988 \cite{GJK}. The algorithm is designed to work efficiently for 3D collision detection however it also works for 2D. Therefore it could be implemented in a 2D game engine. The intention of this algorithm is to determine whether objects intersect by calculating the Eucildean distance between a set of convex objects. According to Gilbert the distance between two convex objects is the same as the distance between those object’s Minkowski difference and the origin. If that difference is zero then the objects are intersecting each other or have collided.
 \newline 
-The original paper gives run times for the algorithm on a selection of 3D shapes, the minimum being 0.13 seconds and the maximum being 19.81. However these are being run in 3D so it is likely it would take less time on 2D convex objects. Furthermore this paper was published in 1988 so the results are restricted by the technology of that time. The results from the paper are from tests run on a Harris 800 which was a computer available from 1979 \cite{harris800}. If the test were repeated on modern hardware it would most likely run considerably faster.
-This leads to the fact that an issue with the GJK algorithm could be its age, [Find the paper] there are many papers that recommend and detail improvements that could be made to GJK to make it faster or more efficient. 
+The original paper gives run times for the algorithm on a selection of 3D shapes, the minimum being 0.13 seconds and the maximum being 19.81. However these are being run in 3D so it is likely it would take less time on 2D convex objects. Furthermore this paper was published in 1988 so the results are restricted by the technology of that time. The results from the paper are from tests run on a Harris 800 which was a computer available from 1979 \cite{harris800}. If the tests were repeated on modern hardware it would most likely run considerably faster.
+This leads to the fact that an issue with the GJK algorithm could be its age, [Find the paper] there are a number of papers that recommend and detail improvements that could be made to GJK to make it faster or more efficient. 
 
 \subsection{Algorithm Two: Guo's algorithm for 2D grapple games}
  The second algorithm is designed for collision detection in 2D grapple games. This paper was published in 2010 making it more recent than the GJK algorithm however it is limited to 2D. In contrast GJK can work in m-dimensions, the paper detailed it’s use for three dimensions but it is also viable in 2D.  
  
- Guo \cite{Guo} proposes a method which bounds the game objects in axis aligned rectangles and circles. A collision has occurred if there is an overlap region between the shapes.
+ Guo \cite{Guo} proposes a method which bounds the game objects in axis aligned rectangles and circles. A collision has occurred if there is an overlap region between the shape's detection area.
  
- In this algorithm the detection area is the area inside of the bounding objects such as the rectangles and circles.  Data such as the coordinate systems are stored in data files beforehand and then loaded into the detection module while running.
+ In this algorithm the detection area is the area inside of the bounding objects such as the rectangles and circles.  Data such as the coordinate systems are stored in data files beforehand and then loaded into the detection module while it is running.
  
- The evidence presented shows that this is a fast (get seconds from paper) algorithm. It results suggest it is faster than the GJK algorithm but the results for GJK were from 3D testing. An issue with Guo's algorithm could be that it is specific to 2D grapple games. It may be unsuitable for use in other games or require some adaption. In contrast the GJK algorithm is more open to general use as it can be used in 2D or 3D and is not just limited to use in games.
+ This algorithm works by setting coordinate values for the rectangle and its four vertices.  The algorithm then calculates the distance between the shape centre and another point. This distance is used to see if any of the shapes vertices are enclosed in another object. If any vertices are then a collision is taking place. This algorithms result is a Boolean that states that either a collision is happening or not.
+ 
+ The evidence presented shows that this is a fast algorithm compared to GJK. The fastest results were for the collisions of two circles. The minimum and maximum time for that collision was 6.20531 milliseconds. The longest this algorithm took  was 160.105 milliseconds for the collision of two rectangles.  In contrast the GJK algorithm took a maximum of 19.91 seconds.  The results suggest it is faster than the GJK algorithm but the results for GJK were from 3D testing.
+ 
+ An issue with Guo's algorithm could be that it is specific to 2D grapple games. It may be unsuitable for use in other games or require some adaptation. In contrast the GJK algorithm is more open to general use as it can be used in 2D or 3D and is not just limited to use in games.
  
  Sulaiman et al \cite{Sulaiman} suggested that the use of bounding boxes in collision detection can be inaccurate. This is because the bounding boxes may intersect and report that a collision is happening. However in actual fact the objects themselves are not colliding making the results inaccurate.
+ %expand on last point
 
 
 \subsection{Algorithm Three: Collision Detection using a dynamic origin point }
-The third technique has been proposed by Sulaiman et al.\cite{Sulaiman} The algorithm is for distance computation in narrow phase of two phase collision detection. The basis of this algorithm was to find a solution for collision detection that was more accurate that bonding boxes. Their method involves using a dynamic origin point, or DyOp. Then calculating which vertex in each shape involved in the collision is closest to the DyOp. Then direction vectors are calculated and the distance between those vectors is the same as the distance between the objects. ..
-The algorithm calculates the distance between two primitives instead of the ….
-Sulaiman et al do not give run times for their algorithm. They instead compared it to two existing algorithms. One of which was the GJK  algorithm. They found that their algorithm gave a speed increase  between 78.1\% to 110.9\%. This suggests that the DyOp algorithm is a better choice for the 2D game engine than the GJK algorithm. The DyOp algorithm does not provide data on how fast the algorithm is in milliseconds making it hard to compare to the second algorithm proposed by Guo. However Guo’s algorithm used bonding boxes. Sulaiman et al were aiming to implement an algorithm more accurate than bounding boxes. (expand)
+The third technique has been proposed by Sulaiman et al.\cite{Sulaiman} The algorithm is for distance computation in the narrow phase of two phase collision detection. The basis of this algorithm was to find a solution for collision detection that was more accurate that bonding boxes. Their method involves using a dynamic origin point, or DyOp. Then calculating which vertex in each shape involved in the collision is closest to the DyOp. Then direction vectors are calculated and the distance between those vectors is the same as the distance between the objects. 
+%rewrite
+
+
+Sulaiman et al do not give run times for their algorithm. They instead compared it to two existing algorithms. One of which was the GJK  algorithm. They found that their algorithm gave a speed increase  between 78.1\% to 110.9\%. This suggests that the DyOp algorithm is a better choice for the 2D game engine than the GJK algorithm. The DyOp algorithm does not provide data on how fast the algorithm is in milliseconds making it hard to compare to the second algorithm proposed by Guo. However Guo’s algorithm used bonding boxes. Sulaiman et al were aiming to implement an algorithm more accurate than bounding boxes.
+%expand
 
 
 
 \section{Conclusion}
 
-Write your conclusion here. The conclusion should do more than summarise the essay, making clear the contribution of the work and highlighting key points, limitations, and outstanding questions. It should not introduce any new content or information.
+
 
 \bibliographystyle{ieeetr}
 \bibliography{comp110_architecture}
