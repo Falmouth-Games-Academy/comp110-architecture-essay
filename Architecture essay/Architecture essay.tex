@@ -1,0 +1,98 @@
+% Please do not change the document class
+\documentclass{scrartcl}
+
+% Please do not change these packages
+\usepackage[hidelinks]{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{setspace}
+\doublespace
+
+% You may add additional packages here
+\usepackage{amsmath}
+
+% Please include a clear, concise, and descriptive title
+\title{Convexity-based Collision Detection For A 2D Game Engine}
+
+% Please do not change the subtitle
+\subtitle{COMP110 - Computer Architecture Essay}
+
+% Please put your student number in the author field
+\author{TE182503}
+
+\begin{document}
+
+\maketitle
+
+\abstract{Please include an abstract of at most 100 words (these do not count towards your word count).}
+
+\section{Introduction}
+
+Collision detection is how a game engine detects how objects in world interact. 
+Specifically when and how objects collide. 
+Collision detection is vital within the player’s experience. 
+It encompasses all aspects of the world and how they interact. 
+Poor collision detection can break player’s emersion and make the game hard to play.
+ Good collision detection is vital within games. 
+Good collision detection can be seen as collision detection which is accurate and responsive, having an algorithm which is less time consuming is vital for having the collisions calculated so the collisions are not delayed. 
+From the papers I looked at I found an improved algorithm to be the best using that criteria.
+
+\section{Your section title here}
+
+An improved algorithm for collision detection in 2D grapple games, kiaqiang guo is one paper I looked at. 
+The algorithm has the objects in world bound by rectangles and circles which are aligned with the in worlds axis \cite{<5453586>}.
+The algorithm is more accurate using circles as well as rectangles for fitting tightly to the object. 
+The algorithm uses a global search to identify potential collisions and then uses a local resolution which runs calculations to see if the objects have overlapped \cite{<5453586>}.
+In this algorithm the formula works out the distance between centre coordinates and the vertexes and uses that distance and point to line to assess if the vertexes were inside another object \cite{<5453586>}.
+ 
+The construction of a predictive collision 2D game engine, Gaius Mulley talks about the algorithm which predicts and stores the information for collisions which could occur. 
+The PGE can be seen as an event simulator which predicts and simulates collisions. 
+The structure used for the predictive game engine has multiple modules \cite{<7004920>}.
+The predictive game engine works by having polyhedra broken into line segments and calculates the smallest time for the next two objects which will collide \cite{<7004920>}.
+The calculation is carried out to see when the collision will occur and stores this information. 
+The objects which are set for collision are made out of circles or line segments so collisions between circle – circle, line - circle and line - line \cite{<7004920>}.
+
+The design of collision detection algorithm in 2D grapple games, Yunlan tan, Changxin Liu, is an algorithm for collision detection in 2D grapple games. 
+The algorithm uses coordinate values of the centre a rectangle and vertexes which create a collision detection area and when the vertexes are enclosed it detects a collision \cite{<5363537>}.
+Objects within the world are bounded by axis-aligned the rectangular boxes or circles which make up the collision zones. 
+The paper presents three algorithms for different situations in game \cite{<5363537>}.
+The first is where roles get translation movement, the second is where roles make contact with walls in game and the third is for rotational movements for roles\cite{<5363537>}.
+
+The Improved algorithm for collision detection in 2D grapple games uses the global search to improve the run time of the algorithm. 
+This reduces run time because it finds pairs of objects which are potentially collision pairs \cite{<5453586>}.
+This is a more general search eliminating non-potential pairs. 
+Then the local resolution runs collision calculations on those pairs. 
+In experiments presented in the paper the run times are as follows; circle - circle took 6.2ms, circle – rectangle took a minimum of 4.02ms and maximum of 14.13ms and rectangle – rectangle took a minimum of 10ms and maximum of 160.1ms \cite{<5453586>}.
+Compared to the run time of collision detection algorithm in 2D grapple games papers results which are; for algorithm 1, 1.2ms up to 2.4ms, for algorithm 2, 15.7ms to 251.29ms, and for algorithm 3, 10ms up to 160ms \cite{<7004920>}.
+The run times in this paper is comparing specific aspects of the game; each algorithm is suitable for different moments while the improved algorithm for collision detection in 2D games test is focused on time of collision between geometric objects \cite{<5453586>}.
+The results show the improved algorithm takes minimal time and is more versatile as whereas the algorithms in the collision detection in 2d grapple games are specific to areas of use. 
+The improved algorithm looks at the time between shapes so they can be used throughout the game.
+The construction of a predictive collision 2d game engine. 
+Is far more complex and does scale well but with current technology the engine is not as efficient \cite{<5363537>}.
+This is because the engine is working out the potential collisions and having to store the information of the collision. 
+The approach from the improved algorithm paper is simpler. 
+It works out the collision area using axis aligned objects and when there is overlap returns that there is a collision. 
+This makes this algorithm using technology available now less time consuming.
+
+
+\section{Recommendation}
+
+I recommend An Improved algorithm if collision detection in2D grapple games because it has minimal running time so the collision will be calculated quickly with current technology available. 
+It has tight fit axis-aligned objects which means it is the same level of accuracy as the Collision detection in 2D grapple games but is more time efficient. 
+This method is not as accurate as other methods like the method the predicitve collision engine suggests but the shapes are tightly fitting to the objects to it is quite accurate and is not very time consuming.
+This collision detection method is also with current technology less time consuming then the method which predicts all of the collision and has to store that data.
+This method is not as quick with the technoligy avalible but the paper talks about how it is feasible but with improvments in technoligy will become more efficient \cite {<5363537>}.
+This means it is currently not the best choice due to how time consuming it is.
+
+\section{Conclusion}
+
+
+The essay looked at 3 papers to assess which one I would recommended based on the quality criteria of how time consuming it. 
+The work contributes to the world of collision detection because they introduce new methods which improve on previous methods and provide a platform for further improvements. 
+Looking at 3 papers which present different methods of detecting collisions within a world. 
+Two of the papers had clear results while the predictive game engine did not have clear timed results, but it is clear the algorithm scales better so it would be good to have the algorithms ran on the same system for more clearer results. 
+
+
+\bibliographystyle{ieeetr}
+\bibliography{architectureref}
+
+\end{document}
